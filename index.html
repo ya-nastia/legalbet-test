@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legalbet test</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <div class="card">
+
+    <div class="container">
+      <div class="header">
+
+        <div class="header__person-stats">
+          <div class="header_avatar">
+            <img src="./icons/avatar.svg" alt="avatar">
+          </div>
+          <div>
+            <div class="header__person-name">Владимир Вуйтек</div>
+            <div class="header__stats-for-thirty-days">
+              Статистика за последние 30 дней
+            </div>
+          </div>
+        </div>
+    
+        <div class="header__calculations">
+          
+          <div class="header__calculation-element calc-numbers green-text">
+            <div class="header__top-calculation-element">+</div>
+            <div class="header__bottom-calculation-element">647</div>
+          </div>
+
+          <div class="header__calculation-element calc-numbers gray-text">
+            <div class="header__top-calculation-element">=</div>
+            <div class="header__bottom-calculation-element">29</div>
+          </div>
+
+          <div class="header__calculation-element calc-numbers red-text">
+            <div class="header__top-calculation-element">-</div>
+            <div class="header__bottom-calculation-element">413</div>
+          </div>
+
+          <div class="header__calculation-element calc-text">
+            <div class="header__top-calculation-element">ROI, %</div>
+            <div class="header__bottom-calculation-element calc-numbers green-text">23,9%</div>
+          </div>
+
+          <div class="header__calculation-element calc-text">
+            <div class="header__top-calculation-element">Прибыль</div>
+            <div class="header__bottom-calculation-element calc-numbers green-text">+22 820</div>
+          </div>
+
+        </div>
+    
+      </div>
+  
+      <div class="text-content text-content_closed">
+        В Кубке страны команда Унаи Эмери бессовестно размялась на «Виктории» из Ла-Коруньи (8:0). 
+        При этом серьёзные соперники: «Севилья», «Барселона» (даже кризисная) и «МЮ» (ещё более кризисный) — били «Вильярреал». 
+        ЛЧ не турнир для Эмери. Он гроссмейстер убогой ЛЕ.
+        Поэтому у «Аталанты» есть шансы. Ей необходимо играть лишь на победу. 
+        Только выигрыш выводит её в плей-офф ЛЧ. 
+        А поражение в комплекте с победой «Янг Бойз» над «МЮ» оставляет бергамасков без еврокубковой весны. 
+        Гасперини вполне по силам одолеть команду Эмери. «Аталанта» уже обыгрывала недавно «Юве» и «Наполи». 
+        Поставлю на победу итальянского клуба.
+        <div class="text-content__gradient">&nbsp;</div>
+      </div>
+    </div>
+
+    <div class="bet-block">
+
+      <button class="bet-block__open-text-btn">
+        <img src="./icons/arrow-down.svg" alt="arrow down">
+      </button>
+
+      <div class="bet-block__forecast">
+        <div class="bet-block__forecast-title">Прогноз</div>
+        <div class="bet-block__forecast-info">
+          Штрафное время: тотал меньше 16,5
+        </div>
+      </div>
+
+      <div class="bet-block__coefficient-container">
+
+        <div class="bet-block__coefficient">
+
+          <div class="bet-block__icon">
+            <img src="./icons/logo.svg" alt="logo">
+          </div>
+
+          <div>
+            <div class="bet-block__coefficient-title">Коэффициент</div>
+            <div class="bet-block__coefficient-number">
+              3.20
+            </div>
+          </div>
+
+        </div>
+
+        <button class="bet-block__bet-btn">Сделать ставку</button>
+
+      </div>
+
+    </div>
+
+  </div>
+</body>
+<script>
+  const openTextBtn = document.body.querySelector('.bet-block__open-text-btn');
+
+  openTextBtn.addEventListener('click', () => {
+    const textEl = document.body.querySelector('.text-content');
+
+    if (textEl.classList.contains('text-content_closed')) {
+      textEl.classList.remove('text-content_closed');
+      openTextBtn.classList.add('bet-block__open-text-btn_opened');
+    } else {
+      textEl.classList.add('text-content_closed');
+      openTextBtn.classList.remove('bet-block__open-text-btn_opened');
+    }
+  })
+</script>
+</html>

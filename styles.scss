@@ -1,0 +1,277 @@
+@font-face {
+  font-family: "ProximaNova";
+  src: url("./fonts/proximanova_regular.ttf") format("truetype");
+  src: url("./fonts/proximanova_regular.woff") format("woff") 
+  url("./fonts/proximanova_regular.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+}
+
+@font-face {
+  font-family: "FuturaPT";
+  src: url("./fonts/FuturaPT-Medium.eot") format("embedded-opentype");
+  src: url("./fonts/FuturaPT-Medium.eot") format("embedded-opentype"),
+  url("./fonts/FuturaPT-Medium.woff") format("woff"), 
+  url("./fonts/FuturaPT-Medium.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+}
+
+@font-face {
+  font-family: "WixMadeforText";
+  src: url("./fonts/WixMadeforText-VariableFont_wght.ttf") format("truetype"); 
+  src: url("./fonts/WixMadeforText-VariableFont_wght.woff") format("woff"), 
+  url("./fonts/WixMadeforText-VariableFont_wght.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
+
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #D4D5D6;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.container {
+  padding: 0 24px;
+}
+
+.card {
+  width: 744px;
+  padding: 24px 0 16px;
+  margin: 50px auto;
+
+  border-radius: 8px;
+  background-color: #FFFFFF;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    &__person-stats {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    &__person-name {
+      font-family: "ProximaNova";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16px;
+      color: var(--black-80, rgba(0, 0, 0, 0.80));
+    }
+
+    &__stats-for-thirty-days {
+      color: var(--black-40, rgba(0, 0, 0, 0.40));
+      font-family: "ProximaNova";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+    }
+
+    &__calculations {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 12px;
+    }
+
+    &__calculation-element {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        padding: 4px 0;
+
+        font-family: "ProximaNova";
+
+        &:first-child {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+
+    &__top-calculation-element {
+      min-height: 24px;
+    }
+
+    .calc-text {
+      color: var(--black-80, rgba(0, 0, 0, 0.80));
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 14px;
+    }
+
+    .calc-numbers {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 16px; 
+    }
+
+    .green-text {
+      color: #62B435;
+    }
+
+    .red-text {
+      color: #F64747;
+    }
+
+    .gray-text {
+      color: rgba(0, 0, 0, 0.40)
+    }
+  }
+
+  .text-content {
+    position: relative;
+    margin: 24px 0 20px;
+    color: var(--black-60, rgba(0, 0, 0, 0.60));
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    &__gradient {
+      display: none;
+    }
+  }
+
+  .text-content_closed {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    .text-content__gradient {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 27px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 16.67%, #FFF 100%);
+    }
+  }
+
+  .bet-block {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 24px 24px 24px 22px;
+
+    background-color: #F9F9FA;
+    border-left: 2px solid #3498DB;
+
+    &__open-text-btn {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      height: 40px;
+      width: 40px;
+      padding: 12px;
+
+      border-radius: 50%;
+      background: var(--white-100, #FFF);
+      box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    &__open-text-btn_opened img {
+      transform: rotate(180deg);
+    }
+
+    &__forecast {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &__forecast-title {
+      color: var(--black-40, rgba(0, 0, 0, 0.40));
+      font-family: "ProximaNova";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 14px;
+      text-transform: uppercase;
+    }
+
+    &__forecast-info {
+      color: var(--black-80, rgba(0, 0, 0, 0.80));
+      font-family: "ProximaNova";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    &__coefficient-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &__coefficient {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    &__coefficient-title {
+      color: var(--grey-80-black-no-transparent, #333);
+      font-family: "ProximaNova";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 14px; 
+    }
+
+    &__coefficient-number {
+      color: var(--black-80, rgba(0, 0, 0, 0.80));
+      font-family: "FuturaPT";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 24px;
+    }
+
+    &__bet-btn {
+      display: flex;
+      width: 140px;
+      height: 40px;
+      padding: 12px 16px;
+      justify-content: center;
+      align-items: center;
+
+      color: var(--white-100, #FFF);
+      text-align: center;
+      font-family: "WixMadeforText";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16px;
+
+      border-radius: 4px;
+      background: var(--color-blue, #3498DB);
+    }
+  }
+}
