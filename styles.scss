@@ -24,8 +24,12 @@
   url("./fonts/WixMadeforText-VariableFont_wght.ttf") format("truetype"); 
   font-style: normal; 
   font-weight: normal; 
-} 
+}
 
+@mixin basicFlex {
+  display: flex;
+  align-items: center;
+}
 
 * {
   box-sizing: border-box;
@@ -44,6 +48,10 @@ button {
 
 .container {
   padding: 0 24px;
+
+  @media (max-width: 744px) {
+    padding: 0 16px;
+  }
 }
 
 .card {
@@ -54,19 +62,35 @@ button {
   border-radius: 8px;
   background-color: #FFFFFF;
 
+  @media (max-width: 744px) {
+    width: 351px;
+    padding: 16px 0 12px;
+  }
+
   .header {
-    display: flex;
-    align-items: center;
+    @include basicFlex;
     justify-content: space-between;
 
     padding-bottom: 20px;
 
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
+    @media (max-width: 744px) {
+      padding-bottom: 16px;
+    }
+
+    &__avatar img {
+      height: 32px;
+      width: 32px;
+    }
+
     &__person-stats {
-      display: flex;
-      align-items: center;
+      @include basicFlex;
       gap: 12px;
+
+      @media (max-width: 744px) {
+        gap: 8px;
+      }
     }
 
     &__person-name {
@@ -85,12 +109,28 @@ button {
       font-style: normal;
       font-weight: 400;
       line-height: 16px;
+
+      @media (max-width: 744px) {
+        display: none;
+      }
+    }
+
+    &__calculations-mobile {
+      display: none;
+
+      @media (max-width: 744px) {
+        display: block;
+      }
     }
 
     &__calculations {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-gap: 12px;
+
+      @media (max-width: 744px) {
+        display: none;
+      }
     }
 
     &__calculation-element {
@@ -112,6 +152,16 @@ button {
       min-height: 24px;
     }
 
+    &__right-mobile {
+      display: none;
+
+      @media (max-width: 744px) {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+    }
+
     .calc-text {
       color: var(--black-80, rgba(0, 0, 0, 0.80));
       font-size: 12px;
@@ -122,7 +172,11 @@ button {
     .calc-numbers {
       font-size: 14px;
       font-weight: 600;
-      line-height: 16px; 
+      line-height: 16px;
+
+      @media (max-width: 744px) {
+        font-weight: 400;
+      }
     }
 
     .green-text {
@@ -135,6 +189,10 @@ button {
 
     .gray-text {
       color: rgba(0, 0, 0, 0.40)
+    }
+
+    &__calculations-mobile__dash {
+      color: var(--black-20, rgba(0, 0, 0, 0.20));
     }
   }
 
@@ -169,16 +227,21 @@ button {
   }
 
   .bet-block {
+    @include basicFlex;
     position: relative;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
 
     width: 100%;
     padding: 24px 24px 24px 22px;
 
     background-color: #F9F9FA;
     border-left: 2px solid #3498DB;
+
+    @media (max-width: 744px) {
+      flex-direction: column;
+      gap: 16px;
+      padding: 16px 16px 16px 14px;
+    }
 
     &__open-text-btn {
       position: absolute;
@@ -203,6 +266,10 @@ button {
       display: flex;
       flex-direction: column;
       gap: 8px;
+
+      @media (max-width: 744px) {
+        width: 100%;
+      }
     }
 
     &__forecast-title {
@@ -222,17 +289,32 @@ button {
       font-style: normal;
       font-weight: 600;
       line-height: 20px;
+
+      @media (max-width: 744px) {
+        @include basicFlex;
+        justify-content: space-between;
+        gap: 12px;
+
+        font-size: 16px;
+        line-height: 18px;
+
+        span {
+          max-width: 223px;
+        }
+      }
     }
 
     &__coefficient-container {
-      display: flex;
-      align-items: center;
+      @include basicFlex;
       gap: 16px;
+
+      @media (max-width: 744px) {
+        display: none;
+      }
     }
 
     &__coefficient {
-      display: flex;
-      align-items: center;
+      @include basicFlex;
       gap: 12px;
     }
 
@@ -252,15 +334,20 @@ button {
       font-style: normal;
       font-weight: 600;
       line-height: 24px;
+
+      @media (max-width: 744px) {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+      }
     }
 
     &__bet-btn {
-      display: flex;
+      @include basicFlex;
       width: 140px;
       height: 40px;
       padding: 12px 16px;
       justify-content: center;
-      align-items: center;
 
       color: var(--white-100, #FFF);
       text-align: center;
@@ -272,6 +359,28 @@ button {
 
       border-radius: 4px;
       background: var(--color-blue, #3498DB);
+
+      @media (max-width: 744px) {
+        display: none;
+      }
+    }
+
+    &__coefficient-mobile {
+      display: none;
+
+      @media (max-width: 744px) {
+        display: flex;
+        gap: 8px;
+      }
+    }
+
+    &__bet-btn-mobile {
+      display: none;
+
+      @media (max-width: 744px) {
+        display: block;
+        width: 100%;
+      }
     }
   }
 }

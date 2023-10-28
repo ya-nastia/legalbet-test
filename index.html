@@ -22,6 +22,15 @@
             <div class="header__stats-for-thirty-days">
               Статистика за последние 30 дней
             </div>
+            <div class="header__calculations-mobile">
+              <span class="green-text calc-numbers">647</span>
+              <span class="calc-numbers header__calculations-mobile__dash">/</span>
+              <span class="gray-text calc-numbers">29</span>
+              <span class="calc-numbers header__calculations-mobile__dash">/</span>
+              <span class="red-text calc-numbers">413</span>
+              <span class="calc-numbers header__calculations-mobile__dash">/</span>
+              <span class="calc-text calc-numbers">ROI 23,9%</span>
+            </div>
           </div>
         </div>
     
@@ -53,6 +62,11 @@
           </div>
 
         </div>
+
+        <div class="header__right-mobile">
+          <span class="calc-numbers gray-text">30 дней</span>
+          <span class="calc-numbers green-text">+22 820</span>
+        </div>
     
       </div>
   
@@ -76,11 +90,31 @@
       </button>
 
       <div class="bet-block__forecast">
+
         <div class="bet-block__forecast-title">Прогноз</div>
+
         <div class="bet-block__forecast-info">
-          Штрафное время: тотал меньше 16,5
+          <span>Штрафное время: тотал меньше 16,5</span>
+          
+          <div class="bet-block__coefficient bet-block__coefficient-mobile">
+
+            <div class="bet-block__icon">
+              <img src="./icons/logo.svg" alt="logo">
+            </div>
+  
+            <div>
+              <div class="bet-block__coefficient-title">Кэф</div>
+              <div class="bet-block__coefficient-number">
+                20.15
+              </div>
+            </div>
+  
+          </div>
         </div>
+
       </div>
+
+      <button class="bet-block__bet-btn bet-block__bet-btn-mobile">Сделать ставку</button>
 
       <div class="bet-block__coefficient-container">
 
@@ -107,19 +141,5 @@
 
   </div>
 </body>
-<script>
-  const openTextBtn = document.body.querySelector('.bet-block__open-text-btn');
-
-  openTextBtn.addEventListener('click', () => {
-    const textEl = document.body.querySelector('.text-content');
-
-    if (textEl.classList.contains('text-content_closed')) {
-      textEl.classList.remove('text-content_closed');
-      openTextBtn.classList.add('bet-block__open-text-btn_opened');
-    } else {
-      textEl.classList.add('text-content_closed');
-      openTextBtn.classList.remove('bet-block__open-text-btn_opened');
-    }
-  })
-</script>
+<script src="./script.js"></script>
 </html>
